@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlaceHolderScript : MonoBehaviour {
+public class PlaceHolderStephen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
