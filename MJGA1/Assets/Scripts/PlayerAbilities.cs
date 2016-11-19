@@ -12,7 +12,7 @@ public class PlayerAbilities : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = Player.Instance.getPlayer();
             GameObject bullet = (GameObject)Instantiate(Resources.Load("Bullet"));
             bullet.transform.position = bulletOrigin.transform.position;
 
