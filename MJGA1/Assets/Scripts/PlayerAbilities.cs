@@ -15,6 +15,9 @@ public class PlayerAbilities : MonoBehaviour {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             GameObject bullet = (GameObject)Instantiate(Resources.Load("Bullet"));
             bullet.transform.position = bulletOrigin.transform.position;
+
+            Destroy(bullet, 1.2f);
+
         }
     }
 }

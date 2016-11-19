@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float lrSpeed = 6f;
-    public float udSpeed = 8f;
+    public float lrSpeed = 14f;
+    public float udSpeed = 11f;
 
 	// Update is called once per frame
 	void Update () {

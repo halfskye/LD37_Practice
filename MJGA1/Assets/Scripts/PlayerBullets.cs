@@ -3,13 +3,11 @@ using System.Collections;
 
 public class PlayerBullets : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+    public float bulletSpeed = 15f;
+
 	// Update is called once per frame
 	void Update () {
-        transform.Translate(Vector2.up);
+        transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
+
 	}
 }
