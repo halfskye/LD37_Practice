@@ -28,14 +28,24 @@ public class PlayerAbilities : MonoBehaviour {
 
     private void UpdatePlayerInput()
     {
-        if (Input.GetKey(PRIMARY_WEAPON_KEY))
+        if (CheckPrimaryWeaponInput())
         {
             _gear["Laser"].Use();
         }
-        if (Input.GetKeyDown(SECONDARY_WEAPON_KEY))
+        if (CheckSecondaryWeaponInput())
         {
             _gear["Bomb"].Use();
         }
+    }
+
+    private bool CheckPrimaryWeaponInput()
+    {
+        return Input.GetMouseButton(0) || Input.GetKey(PRIMARY_WEAPON_KEY);
+    }
+
+    private bool CheckSecondaryWeaponInput()
+    {
+        return Input.GetMouseButton(1) || Input.GetKey(SECONDARY_WEAPON_KEY);
     }
 
     public void UpdateGear()
