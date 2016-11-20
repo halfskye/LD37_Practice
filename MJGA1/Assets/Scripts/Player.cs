@@ -37,9 +37,9 @@ public class Player : Singleton<Player> {
 
     private void AddStartingGear()
     {
-        _abilities.addGear("Laser");
-        _abilities.addGear("Bomb");
-        _abilities.addGear("Shield");
+        _abilities.addGear("Laser", 1);
+        _abilities.addGear("Bomb", 1);
+        _abilities.addGear("Shield", 1);
     }
 
     public void takeDamage(float damage)
