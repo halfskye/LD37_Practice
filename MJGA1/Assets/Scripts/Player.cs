@@ -6,14 +6,14 @@ public class Player : Singleton<Player> {
     private GameObject _player = null;
     public GameObject getPlayer() { return _player; }
 
-    private MonoBehaviour _movement = null;
-    public MonoBehaviour getMovement() { return _movement; }
+    private PlayerMovement _movement = null;
+    public PlayerMovement getMovement() { return _movement; }
 
-    private MonoBehaviour _abilities = null;
-    public MonoBehaviour getAbilities() { return _abilities; }
+    private PlayerAbilities _abilities = null;
+    public PlayerAbilities getAbilities() { return _abilities; }
 
-    private MonoBehaviour _health = null;
-    public MonoBehaviour getHealth() { return _health; }
+    private PlayerHealth _health = null;
+    public PlayerHealth getHealth() { return _health; }
 
     private void Awake()
     {
@@ -28,5 +28,17 @@ public class Player : Singleton<Player> {
         _movement = _player.GetComponent<PlayerMovement>();
         _abilities = _player.GetComponent<PlayerAbilities>();
         _health = _player.GetComponent<PlayerHealth>();
+    }
+
+    private void Start()
+    {
+        AddStartingGear();
+    }
+
+    private void AddStartingGear()
+    {
+        _abilities.addGear("Laser");
+        _abilities.addGear("Bomb");
+        _abilities.addGear("Shield");
     }
 }
