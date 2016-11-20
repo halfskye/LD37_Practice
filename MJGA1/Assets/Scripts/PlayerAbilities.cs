@@ -26,7 +26,7 @@ public class PlayerAbilities : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(PRIMARY_WEAPON_KEY))
+        if (Input.GetKey(PRIMARY_WEAPON_KEY))
         {
             _gear["Laser"].Use();
         }

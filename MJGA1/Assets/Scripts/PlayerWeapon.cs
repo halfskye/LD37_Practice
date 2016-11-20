@@ -25,6 +25,6 @@ abstract public class PlayerWeapon : PlayerGear {
 
     virtual public bool CanFire() {
         //@TODO: Check for things like cooldown, ammo, etc.
-        return true;
+        return (_cooldownTime > _cooldown);
     }
 }
