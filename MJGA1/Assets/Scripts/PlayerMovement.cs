@@ -16,10 +16,13 @@ public class PlayerMovement : MonoBehaviour {
     private const float udSpeedMax = 35;
     private float lrSpeedMin = 14f;
     private float udSpeedMin = 11f;
+    private bool isLeft;
+    private bool isRight;
 
     private SpriteRenderer sprtRend;
 
-    void Start() {
+    void Start()
+    {
         sprtRend = GetComponent<SpriteRenderer>();
         if (sprtRend.sprite == null)
         {
@@ -27,38 +30,45 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void Update () {
-	
+    // Update is called once per frame
+    void Update () {
+
+        #region BasicMovement
         if (Input.GetKey(KeyCode.A))
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.left * lrSpeed);
-            sprtRend.sprite = sprt_left;
+            //GetComponent<Rigidbody2D>().AddForce(Vector2.left * lrSpeed);
+            transform.Translate(Vector2.left / 6);
+            isLeft = true;
         }
         else
         {
-            sprtRend.sprite = sprt_straight;
+            isLeft = false;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.right * lrSpeed);
-            sprtRend.sprite = sprt_right;
+            //GetComponent<Rigidbody2D>().AddForce(Vector2.right * lrSpeed);
+            transform.Translate(Vector2.right / 6);
+            isRight = true;
         }
         else
         {
-            sprtRend.sprite = sprt_straight;
+            isRight = false;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.down * udSpeed);
+            //GetComponent<Rigidbody2D>().AddForce(Vector2.down * udSpeed);
+            transform.Translate(Vector2.down / 8);
         }
         if (Input.GetKey(KeyCode.W))
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * udSpeed);
+            //GetComponent<Rigidbody2D>().AddForce(Vector2.up * udSpeed);
+            transform.Translate(Vector2.up / 8);
         }
+        #endregion
 
+        #region SpeedBoost
         if (Input.GetKey(KeyCode.LeftShift))
         {
             lrSpeed += lrSpeedBoost;
@@ -88,6 +98,23 @@ public class PlayerMovement : MonoBehaviour {
                 udSpeed = udSpeedMin;
             }
         }
+        #endregion
 
+        #region SpriteAnimations
+        if (isRight)
+        {
+            sprtRend.sprite = sprt_right;
+        }
+
+        if (isLeft)
+        {
+            sprtRend.sprite = sprt_left;
+        }
+
+        if (isLeft == false && isRight == false)
+        {
+            sprtRend.sprite = sprt_straight;
+        }
+        #endregion
     }
 }
