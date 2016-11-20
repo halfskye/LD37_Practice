@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite sprt_straight;
     public Sprite sprt_left;
     public Sprite sprt_right;
+    public Transform enemyPrefab;
 
     public float lrSpeed = 14f;
     public float udSpeed = 11f;
@@ -28,16 +29,21 @@ public class PlayerMovement : MonoBehaviour {
         {
             sprtRend.sprite = sprt_straight;
         }
+
+        Transform enemy = Instantiate(enemyPrefab) as Transform;
+        Physics.IgnoreCollision(enemy.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     // Update is called once per frame
     void Update () {
 
+        Physics2D.IgnoreLayerCollision(8,9);    
+
         #region BasicMovement
         if (Input.GetKey(KeyCode.A))
         {
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.left * lrSpeed);
-            transform.Translate(Vector2.left / 6);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.left * lrSpeed);
+            //transform.Translate(Vector2.left / 6);
             isLeft = true;
         }
         else
@@ -47,8 +53,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
         {
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.right * lrSpeed);
-            transform.Translate(Vector2.right / 6);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.right * lrSpeed);
+            //transform.Translate(Vector2.right / 6);
             isRight = true;
         }
         else
@@ -58,13 +64,13 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.S))
         {
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.down * udSpeed);
-            transform.Translate(Vector2.down / 8);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.down * udSpeed);
+            //transform.Translate(Vector2.down / 8);
         }
         if (Input.GetKey(KeyCode.W))
         {
-            //GetComponent<Rigidbody2D>().AddForce(Vector2.up * udSpeed);
-            transform.Translate(Vector2.up / 8);
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * udSpeed);
+            //transform.Translate(Vector2.up / 8);
         }
         #endregion
 
