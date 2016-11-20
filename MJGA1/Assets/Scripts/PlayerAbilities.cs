@@ -17,14 +17,12 @@ public class PlayerAbilities : MonoBehaviour {
 
     void Awake()
     {
-        if (Player.Instance != null)
-        {
-            _gear = new Dictionary<string, PlayerGear>();
-        }
+        _gear = new Dictionary<string, PlayerGear>();
     }
 
 	// Update is called once per frame
 	void Update () {
+        Player.Instance.Update();
         UpdateGear();
         UpdatePlayerInput();
     }

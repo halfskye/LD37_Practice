@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour {
     private float MAX_HEALTH = 50.0f;
 
     private float _health;
+    public float GetValue() { return _health; }
 
 	// Use this for initialization
 	void Start () {

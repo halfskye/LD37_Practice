@@ -42,7 +42,47 @@ public class Player : Singleton<Player> {
         _abilities.addGear("Shield");
     }
 
+    public void Update()
+    {
+    }
+
     public void takeDamage(float damage)
     {
+        // Check against Shield first.
+        PlayerShield shield = GetShield();
+        if (shield != null)
+        {
+            damage = shield.TakeDamage(damage);
+        }
+
+        if (damage > 0.0f)
+        {
+            _health.takeDamage(damage);
+        }
+    }
+
+    public PlayerShield GetShield()
+    {
+        // Check against Shield first.
+        PlayerGear shieldGear;
+        if (_abilities.getPlayerGear().TryGetValue("Shield", out shieldGear))
+        {
+            return (PlayerShield)shieldGear;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public float GetShieldValue()
+    {
+        PlayerShield shield = GetShield();
+        return (shield != null) ? shield.GetValue() : 0.0f;
+    }
+
+    public float GetHealthValue()
+    {
+        return _health.GetValue();
     }
 }
