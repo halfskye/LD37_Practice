@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 
     public Vector3 enemySpawn;
     float x;
-    float y = 7;
+    float y = 5;
     float z = 0;
     GameObject enemy;
 
