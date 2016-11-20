@@ -25,7 +25,12 @@ public class PlayerAbilities : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        UpdateGear();
+        UpdatePlayerInput();
+    }
 
+    private void UpdatePlayerInput()
+    {
         if (Input.GetKey(PRIMARY_WEAPON_KEY))
         {
             _gear["Laser"].Use();
@@ -36,9 +41,15 @@ public class PlayerAbilities : MonoBehaviour {
         }
     }
 
+    public void UpdateGear()
+    {
+        foreach(PlayerGear gear in _gear.Values) {
+            gear.Update();
+        }
+    }
+
     public void addGear(string name)
     {
-        //@TODO: Find gear type by name and it. Probably some type of dictionary?
         PlayerGear gear = PlayerGear.CreateGear(name);
         if (gear != null)
         {

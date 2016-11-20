@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerGear {
-    virtual public void Use()
-    {
-
-    }
+abstract public class PlayerGear {
+    abstract public void Use();
+    abstract public void Update();
 
     static public PlayerGear CreateGear(string name)
     {

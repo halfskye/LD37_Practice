@@ -8,11 +8,13 @@ abstract public class PlayerWeapon : PlayerGear {
 
     private float _cooldownTime = 0.0f;
 
-    public override void Use()
+    public override void Update()
     {
         _cooldownTime += Time.deltaTime;
+    }
 
-        //base.Use();
+    public override void Use()
+    {
         if(CanFire()) {
             if (Fire())
             {

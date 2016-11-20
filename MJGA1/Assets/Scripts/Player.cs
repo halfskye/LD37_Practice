@@ -41,4 +41,8 @@ public class Player : Singleton<Player> {
         _abilities.addGear("Bomb");
         _abilities.addGear("Shield");
     }
+
+    public void takeDamage(float damage)
+    {
+    }
 }
