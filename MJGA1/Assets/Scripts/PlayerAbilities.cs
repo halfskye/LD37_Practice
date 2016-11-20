@@ -9,6 +9,13 @@ public class PlayerAbilities : MonoBehaviour {
     private Transform bulletOrigin;
     public Transform getBulletOrigin() { return bulletOrigin; }
 
+    [SerializeField]
+    private Transform _powerup1Achor;
+    [SerializeField]
+    private Transform _powerup2Achor;
+    [SerializeField]
+    private Transform _powerup3Achor;
+
     private Dictionary<string, PlayerGear> _gear = null;
     public Dictionary<string, PlayerGear> getPlayerGear() { return _gear; }
 
