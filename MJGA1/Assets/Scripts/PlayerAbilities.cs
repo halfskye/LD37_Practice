@@ -22,7 +22,6 @@ public class PlayerAbilities : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Player.Instance.Update();
         UpdateGear();
         UpdatePlayerInput();
     }

@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
-    [SerializeField]
-    private float MAX_HEALTH = 50.0f;
+    static public float MAX_HEALTH = 50.0f;
 
     private float _health;
     public float GetValue() { return _health; }

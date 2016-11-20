@@ -42,10 +42,6 @@ public class Player : Singleton<Player> {
         _abilities.addGear("Shield");
     }
 
-    public void Update()
-    {
-    }
-
     public void takeDamage(float damage)
     {
         // Check against Shield first.
