@@ -20,10 +20,10 @@ public class PlayerHUD : MonoBehaviour {
         int ScreenX = 10;
         int ScreenXWidth = 100;
         int ScreenY = Screen.height - 100;
-        int SpaceBetweenEntries = 10;
-        GUI.Label(new Rect(ScreenX, ScreenY, ScreenX + ScreenXWidth, ScreenY + SpaceBetweenEntries), string.Format("SHIELD: {0}", player.GetShieldValue()));
+        int SpaceBetweenEntries = 12;
+        GUI.Label(new Rect(ScreenX, ScreenY, ScreenX + ScreenXWidth, ScreenY + SpaceBetweenEntries), string.Format("SHIELD: {0:F2}", player.GetShieldValue()));
         ScreenY += SpaceBetweenEntries;
-        GUI.Label(new Rect(ScreenX, ScreenY, ScreenX + ScreenXWidth, ScreenY + SpaceBetweenEntries), string.Format("HEALTH: {0}", player.GetHealthValue()));
+        GUI.Label(new Rect(ScreenX, ScreenY, ScreenX + ScreenXWidth, ScreenY + SpaceBetweenEntries), string.Format("HEALTH: {0:F2}", player.GetHealthValue()));
         ScreenY += SpaceBetweenEntries;
     }
 }

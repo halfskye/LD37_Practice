@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerShield : PlayerGear {
 
     private const float MAX_SHIELD = 50.0f;
-    private const float REGEN_RATE = 10.0f;
+    private const float REGEN_RATE = 1.0f;
 
     private float _shield;
     public float GetValue() { return _shield; }

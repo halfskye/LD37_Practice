@@ -19,8 +19,8 @@ public class PlayerHealth : MonoBehaviour {
 
         if (_health <= 0.0f)
         {
-            //@TODO: Player is dead. Deal wit dat.
-            // Maybe make an event that others can subscribe to?
+            Destroy(Player.Instance.getPlayer().gameObject);
+            _health = 0.0f;
         }
     }
 
@@ -28,5 +28,14 @@ public class PlayerHealth : MonoBehaviour {
     {
         _health += amount;
         _health = Mathf.Clamp(_health, 0.0f, MAX_HEALTH);
+    }
+
+    void OnCollisionEnter2D(Collision2D Enemy)
+    {
+        if (Enemy.gameObject.tag == "Enemy")
+        {
+            const float randomTempDamage = 5.0f;
+            Player.Instance.takeDamage(randomTempDamage);
+        }
     }
 }
