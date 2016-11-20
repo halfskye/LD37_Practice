@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour {
     public Sprite sprt_straight;
     public Sprite sprt_left;
     public Sprite sprt_right;
-    public Transform enemyPrefab;
 
     public float lrSpeed = 14f;
     public float udSpeed = 11f;
@@ -29,9 +28,6 @@ public class PlayerMovement : MonoBehaviour {
         {
             sprtRend.sprite = sprt_straight;
         }
-
-        Transform enemy = Instantiate(enemyPrefab) as Transform;
-        Physics.IgnoreCollision(enemy.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
     // Update is called once per frame
@@ -122,5 +118,12 @@ public class PlayerMovement : MonoBehaviour {
             sprtRend.sprite = sprt_straight;
         }
         #endregion
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
