@@ -5,7 +5,7 @@ public class PlayerBullets : MonoBehaviour
 {
 
     public float bulletSpeed = 15f;
-    //private BoxCollider2D coll;
+   //private BoxCollider2D coll;
 
 
 

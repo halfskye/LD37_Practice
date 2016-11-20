@@ -12,7 +12,14 @@ public class PlayerBomb : PlayerWeapon {
 
     public override bool Fire()
     {
-        //@TODO: Create some bomb object.
+        GameObject bomb = (GameObject)GameObject.Instantiate(Resources.Load("Bomb"));
+        Transform bulletOrigin = Player.Instance.getAbilities().getBulletOrigin();
+        bomb.transform.position = bulletOrigin.transform.position;
+
+        GameObject.Destroy(bomb, 3f);
+
         return true;
     }
+
+
 }
