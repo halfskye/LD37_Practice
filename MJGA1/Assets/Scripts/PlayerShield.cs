@@ -9,8 +9,13 @@ public class PlayerShield : PlayerGear {
     private float _shield;
     public float GetValue() { return _shield; }
 
-    public PlayerShield()
+    public PlayerShield(int level)
     {
+        //@TODO: Take into account the Shield's level and do different behavior. Different regen rate? Higher max shield?
+
+        SetType(Type.SHIELD);
+        SetLevel(level);
+
         _shield = MAX_SHIELD;
     }
 
