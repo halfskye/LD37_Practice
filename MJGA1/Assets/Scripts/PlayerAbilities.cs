@@ -10,11 +10,18 @@ public class PlayerAbilities : MonoBehaviour {
     public Transform getBulletOrigin() { return bulletOrigin; }
 
     [SerializeField]
-    private Transform _powerup1Achor;
+    private SpriteRenderer _powerup1SpriteRenderer;
     [SerializeField]
-    private Transform _powerup2Achor;
+    private SpriteRenderer _powerup2SpriteRenderer;
     [SerializeField]
-    private Transform _powerup3Achor;
+    private SpriteRenderer _powerup3SpriteRenderer;
+
+    [SerializeField]
+    List<Sprite> _shieldSprites = null;
+    [SerializeField]
+    List<Sprite> _laserSprites = null;
+    [SerializeField]
+    List<Sprite> _bombSprites = null;
 
     private Dictionary<string, PlayerGear> _gear = null;
     public Dictionary<string, PlayerGear> getPlayerGear() { return _gear; }
