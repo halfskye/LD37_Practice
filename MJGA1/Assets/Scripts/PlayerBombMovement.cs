@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class PlayerBombMovement : MonoBehaviour {
 
     public float bombSpeed = 5f;
-	// Use this for initialization
 
-	
 	// Update is called once per frame
 	void Update () {
+
         transform.Translate(Vector2.up * bombSpeed * Time.deltaTime);
+
+
     }
 
 

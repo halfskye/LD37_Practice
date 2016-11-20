@@ -7,8 +7,11 @@ public class EnemySpawner : MonoBehaviour {
 
     public Vector3 enemySpawn;
     float x;
-    float y = 5;
+    float y = 6;
     float z = 0;
+
+
+
     GameObject enemy;
 
 
@@ -20,19 +23,19 @@ public class EnemySpawner : MonoBehaviour {
 
 	void Update () {
 
-                int spawnTimer = Random.Range(2, 50);
+        int spawnTimer = Random.Range(1, 70);
 
         if (spawnTimer == 3)
             {
-
-                x = Random.Range(-6.5f, 7);
-
+                
+                x = Random.Range(-8f, 7.5f);
                 enemy = (GameObject)Instantiate(Resources.Load("Enemy"));
-
+                                
                 enemySpawn = new Vector3(x, y, z);
-
+                
                 enemy.transform.position = enemySpawn;
-            }
+               
+        }
 
 
         Destroy(enemy, 5);
