@@ -117,6 +117,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             sprtRend.sprite = sprt_straight;
         }
+
+        var thrusters = GameObject.Find("Thrusters");
+
+        //thrusters.GetComponent<SpriteRenderer>().sprite = speed2;
         #endregion
     }
 
