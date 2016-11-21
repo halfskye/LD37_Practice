@@ -37,7 +37,7 @@ public class Player : Singleton<Player> {
 
     private void AddStartingGear()
     {
-        _abilities.addGear("Laser", 1);
+        _abilities.addGear("Laser", 2);
         _abilities.addGear("Bomb", 1);
         _abilities.addGear("Shield", 1);
     }

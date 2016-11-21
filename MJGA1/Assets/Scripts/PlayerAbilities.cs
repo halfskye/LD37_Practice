@@ -10,6 +10,14 @@ public class PlayerAbilities : MonoBehaviour {
     public Transform getBulletOrigin() { return bulletOrigin; }
 
     [SerializeField]
+    private Transform bulletOriginRight;
+    public Transform getBulletOriginRight() { return bulletOriginRight; }
+
+    [SerializeField]
+    private Transform bulletOriginLeft;
+    public Transform getBulletOriginLeft() { return bulletOriginLeft; }
+
+    [SerializeField]
     private SpriteRenderer _powerup1SpriteRenderer;
     [SerializeField]
     private SpriteRenderer _powerup2SpriteRenderer;

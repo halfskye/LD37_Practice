@@ -23,7 +23,7 @@ public class PlayerBullets : MonoBehaviour
         //Instantiate(explosionPrefab, pos, rot);
         if (Enemy.gameObject.tag == "Enemy")
         {
-            Debug.Log("hit enemy");
+            //Debug.Log("hit enemy");
             Destroy(Enemy.gameObject);
             Destroy(this.gameObject);
         }
